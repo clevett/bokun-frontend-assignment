@@ -5,6 +5,7 @@ import axios from "axios";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
+import { Loading } from "@/app/components";
 import type { Experience } from "@/app/types";
 
 export default function Experience() {
@@ -18,7 +19,6 @@ export default function Experience() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    //Note: In real project scenario this would need to be dynamic as multiple users could updating experiences at the same time
     if (experience === undefined) {
       axios
         .get(`${process.env.NEXT_PUBLIC_API}/experiences/${experienceId}`)
@@ -34,12 +34,12 @@ export default function Experience() {
   }, [experience, experienceId]);
 
   const onEditClick = (experience_id: string) => {
-    router.push(`/experiences/${experience_id}`);
+    router.push(`/experiences/${experience_id}/edit`);
   };
 
   return (
     <div>
-      {isLoading && <span>Loading...</span>}
+      {isLoading && <Loading />}
       {!isLoading && !experience && <span>Experience not found</span>}
       {!isLoading && experience && (
         <div className="grid gap-6 auto-rows-min">

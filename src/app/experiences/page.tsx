@@ -4,6 +4,7 @@ import axios from "axios";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
+import { Loading } from "@/app/components";
 import type { Experiences } from "@/app/types";
 
 export default function Experiences() {
@@ -36,7 +37,7 @@ export default function Experiences() {
   return (
     <section className="grid gap-6">
       <h1 className="text-5xl">Experiences</h1>
-      {isLoading && <span>Loading...</span>}
+      {isLoading && <Loading />}
       {!isLoading && !experiences && <span>No experiences found</span>}
       {!isLoading && experiences && experiences.length > 0 && (
         <div className="flex flex-wrap flex-row gap-4 justify-center grid-flow-col">

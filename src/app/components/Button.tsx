@@ -4,7 +4,7 @@ const styles = {
   warning: "bg-red-900 hover:bg-red-700 border-red-900 text-white",
 };
 
-// Create this button to demonstrate building a component library. Ideally it would be styled using a Design System as source of truth. In a production setting, I would have created inputs, textareas, and form elements as well.
+// Created this button to demonstrate building a component library. Ideally it would be styled using a Design System as source of truth. In a production setting, I would have created inputs, textareas, and form elements as well.
 export const Button = ({
   text,
   style = "solid",

@@ -4,7 +4,7 @@ import axios from "axios";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
-import { Loading } from "@/app/components";
+import { Button, Loading } from "@/app/components";
 import type { Experiences } from "@/app/types";
 
 export default function Experiences() {
@@ -34,9 +34,17 @@ export default function Experiences() {
     router.push(`/experiences/${experience_id}`);
   };
 
+  const onCreateNewClick = () => {
+    router.push(`/experiences/new`);
+  };
+
   return (
     <section className="grid gap-6">
-      <h1 className="text-5xl">Experiences</h1>
+      <div className="grid grid-flow-col gap-6">
+        <h1 className="text-5xl">Experiences</h1>
+        <Button text="Create New Experience" onClick={onCreateNewClick} />
+      </div>
+
       {isLoading && <Loading />}
       {!isLoading && !experiences && <span>No experiences found</span>}
       {!isLoading && experiences && experiences.length > 0 && (

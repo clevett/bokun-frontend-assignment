@@ -1,11 +1,10 @@
 "use client";
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
 
-import { Loading } from "@/app/components";
+import { Button, Loading } from "@/app/components";
 import type { Experience } from "@/app/types";
 
 export default function Experience() {
@@ -57,14 +56,12 @@ export default function Experience() {
           <div className="grid gap-4 px-4 py-6 auto-rows-min">
             <div className="grid gap-2 grid-flow-col grid-cols-[auto_min-content]">
               <h1 className="text-5xl capitalize">{experience.title}</h1>
-              <button
-                className="cursor-pointer border border-accent p-2 rounded-full min-w-[100px] font-bold shadowed hover:bg-accent hover:text-primary "
+              <Button
                 onClick={() => onEditClick(experience.id)}
-              >
-                (edit)
-              </button>
+                style="outline"
+                text="(edit)"
+              />
             </div>
-
             <span>Rating: {experience.rating}</span>
             <span>{experience.description}</span>
           </div>

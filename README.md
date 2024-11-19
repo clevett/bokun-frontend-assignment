@@ -12,4 +12,4 @@ Requires a .env file for api.
 
 ## Notes
 
-A few Notes: were added to reflect decision made for the technical eval versus a user facing project.
+Comments and notes have been added to reflect decision made for the technical eval versus a user facing project.

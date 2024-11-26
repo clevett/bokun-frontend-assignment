@@ -4,8 +4,8 @@ import { useParams, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-import { Experience } from "@/app/types";
-import { Button, Loading } from "@/app/components";
+import { Experience } from "@/types";
+import { Button, Loading } from "@/components";
 
 export default function ExperienceEdit() {
   const router = useRouter();

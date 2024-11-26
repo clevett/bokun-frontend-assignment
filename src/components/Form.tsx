@@ -1,11 +1,15 @@
-import Link from "next/link";
+"use client";
 
 import { Button } from "@/components";
-import { createExperience } from "@/actions";
+import Link from "next/link";
 
-export default function ExperienceNew() {
+export const Form = ({
+  action,
+}: {
+  action: (formData: FormData) => Promise<void>;
+}) => {
   return (
-    <form className="grid gap-6 auto-rows-min" action={createExperience}>
+    <form className="grid gap-6 auto-rows-min" action={action}>
       <div className="grid justify-center items-center border-dotted border min-h-[500px] min-w-[500px] rounded">
         {/* Skipping a complex implementation for tech eval. We might add a drag and drop field, image preview, and on hover effects. */}
         <input className="cursor-pointed" name="imageUrl" type="file" />
@@ -40,4 +44,4 @@ export default function ExperienceNew() {
       </div>
     </form>
   );
-}
+};

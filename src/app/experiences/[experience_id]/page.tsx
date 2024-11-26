@@ -1,11 +1,11 @@
-"use client";
 import { useParams, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+
 import axios from "axios";
 import Image from "next/image";
 
-import { Button, Loading } from "@/app/components";
-import type { Experience } from "@/app/types";
+import { Button } from "@/components";
+import type { Experience } from "@/types";
 
 export default function Experience() {
   const router = useRouter();
@@ -20,7 +20,7 @@ export default function Experience() {
   useEffect(() => {
     if (experience === undefined) {
       axios
-        .get(`${process.env.NEXT_PUBLIC_API}/experiences/${experienceId}`)
+        .get(`${process.env.API}/experiences/${experienceId}`)
         .then((response) => {
           setExperience(response.data);
           setIsLoading(false);
@@ -38,7 +38,6 @@ export default function Experience() {
 
   return (
     <div>
-      {isLoading && <Loading />}
       {!isLoading && !experience && <span>Experience not found</span>}
       {!isLoading && experience && (
         <div className="grid gap-6 auto-rows-min">

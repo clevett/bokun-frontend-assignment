@@ -8,9 +8,6 @@ import axios from "axios";
 import { Experience } from "@/app/types";
 import { Button } from "@/app/components";
 
-// **Method**: `POST`
-// **URL**: `https://demo.bokun.me/:assignmentId/experiences`
-
 export default function ExperienceNew() {
   const router = useRouter();
   const id = uuidv4();

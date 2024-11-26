@@ -9,13 +9,11 @@ export const Button = ({
   className,
   onClick,
   style = "solid",
-  text,
   children,
 }: {
   className?: string;
   onClick?: () => void;
   style?: keyof typeof styles;
-  text?: string;
   children?: React.ReactNode;
 }) => {
   return (
@@ -24,7 +22,6 @@ export const Button = ({
       onClick={onClick}
     >
       {children}
-      {text}
     </button>
   );
 };

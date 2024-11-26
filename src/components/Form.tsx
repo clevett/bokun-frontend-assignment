@@ -1,34 +1,56 @@
-"use client";
-
-import { Button } from "@/components";
+import Image from "next/image";
 import Link from "next/link";
 
+import { Button } from "@/components";
+import { Experience } from "@/types";
+
 export const Form = ({
-  action,
+  cancelHref = "/experiences",
+  onSubmitAction,
+  experience,
 }: {
-  action: (formData: FormData) => Promise<void>;
+  cancelHref?: string;
+  experience?: Experience;
+  onSubmitAction: (formData: FormData) => Promise<void>;
 }) => {
+  const { title, description, imageUrl } = experience || {};
+
   return (
-    <form className="grid gap-6 auto-rows-min" action={action}>
-      <div className="grid justify-center items-center border-dotted border min-h-[500px] min-w-[500px] rounded">
-        {/* Skipping a complex implementation for tech eval. We might add a drag and drop field, image preview, and on hover effects. */}
-        <input className="cursor-pointed" name="imageUrl" type="file" />
-      </div>
+    <form className="grid gap-4 auto-rows-min" action={onSubmitAction}>
+      {title && <h1 className="text-5xl">{title}</h1>}
+
+      {imageUrl && (
+        <Image
+          alt={title ?? "tour image"}
+          aria-hidden
+          className="rounded-md shadow-lg"
+          height={500}
+          priority={true}
+          src={imageUrl}
+          width={500}
+        />
+      )}
+
       <div className="grid gap-4 px-4 py-6 auto-rows-min">
-        <div className="grid gap-4 grid-flow-col grid-cols-[auto_1fr]">
+        <div className="grid gap-4 grid-flow-col grid-cols-[1fr_2fr]">
+          <label htmlFor="image">Image</label>
+          <input className="cursor-pointed  " name="imageUrl" type="file" />
+        </div>
+
+        <div className="grid gap-4 grid-flow-col grid-cols-[1fr_2fr]">
           <label htmlFor="title">Title</label>
           <input
             className="text-primary p-2"
-            defaultValue="Walking tour"
+            defaultValue={title}
             name="title"
             type="text"
           />
         </div>
-        <div className="grid gap-4 grid-flow-col grid-cols-[auto_1fr]">
+        <div className="grid gap-4 grid-flow-col grid-cols-[1fr_2fr]">
           <label htmlFor="description">Description</label>
           <textarea
             className="w-xl text-primary p-2 min-h-[80px]"
-            defaultValue="Beautiful walking tour"
+            defaultValue={description}
             name="description"
           />
         </div>
@@ -39,7 +61,7 @@ export const Form = ({
         </Button>
 
         <Button style="outline">
-          <Link href="/experiences">Cancel</Link>
+          <Link href={cancelHref}>Cancel</Link>
         </Button>
       </div>
     </form>

@@ -24,9 +24,14 @@ export default async function Experience({
   const destroyExperience = deleteExperience.bind(null, experience.id);
 
   return (
-    <div>
+    <div className="grid gap-4 py-4 px-2">
+      <Button className="max-w-max" style="outline">
+        <Link className="w-full h-full" href={`/experiences`}>
+          Back to Experiences
+        </Link>
+      </Button>
       {experience && (
-        <div className="grid gap-6 auto-rows-min">
+        <div className="grid gap-6 auto-rows-min lg:px-60">
           <div className="grid justify-center items-center">
             <Image
               alt={experience.title}
@@ -45,7 +50,7 @@ export default async function Experience({
             <span>Rating: {experience.rating}</span>
             <span>{experience.description}</span>
           </div>
-          <div className="grid grid-flow-col gap-4">
+          <div className="grid grid-flow-col gap-4 lg:gap-10">
             <Button style="outline">
               <Link
                 className="w-full h-full"
@@ -54,7 +59,11 @@ export default async function Experience({
                 Edit
               </Link>
             </Button>
-            <Button style="warning" onClick={destroyExperience}>
+            <Button
+              className="justify-self-end"
+              style="warning"
+              onClick={destroyExperience}
+            >
               Delete
             </Button>
           </div>

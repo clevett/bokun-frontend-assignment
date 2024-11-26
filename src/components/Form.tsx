@@ -16,7 +16,10 @@ export const Form = ({
   const { title, description, imageUrl } = experience || {};
 
   return (
-    <form className="grid gap-4 auto-rows-min" action={onSubmitAction}>
+    <form
+      className="grid gap-4 auto-rows-min py-4 px-2"
+      action={onSubmitAction}
+    >
       {title && <h1 className="text-5xl">{title}</h1>}
 
       {imageUrl && (
@@ -31,7 +34,14 @@ export const Form = ({
         />
       )}
 
-      <div className="grid gap-4 px-4 py-6 auto-rows-min">
+      {!imageUrl && (
+        <div className="grid justify-center rounded-md shadow-lg items-center border-dotted border min-h-[250px] min-w-[250px md:min-h-[500px] md:min-w-[500px]">
+          {/* Skipping implementing this for tech eval. We might add a drag and drop field with hover effects. */}
+          (Add Image Below)
+        </div>
+      )}
+
+      <div className="grid gap-4 px-2 py-4 md:px-4 md:py-6 auto-rows-min">
         <div className="grid gap-4 grid-flow-col grid-cols-[1fr_2fr]">
           <label htmlFor="image">Image</label>
           <input className="cursor-pointed  " name="imageUrl" type="file" />
@@ -60,7 +70,7 @@ export const Form = ({
           <input className="cursor-pointer w-full h-full" type="submit" />
         </Button>
 
-        <Button style="outline">
+        <Button style="outline" className="justify-self-end">
           <Link href={cancelHref}>Cancel</Link>
         </Button>
       </div>

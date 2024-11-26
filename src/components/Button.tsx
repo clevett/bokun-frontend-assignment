@@ -1,6 +1,6 @@
 export const styles = {
-  solid: "bg-alert hover:bg-accent border-primary text-white",
-  outline: "border-accent hover:bg-accent hover:text-primary ",
+  solid: "bg-green-900 hover:bg-green-700 border-primary text-white",
+  outline: "border-accent hover:bg-accent hover:text-primary",
   warning: "bg-red-900 hover:bg-red-700 border-red-900 text-white",
 };
 
@@ -18,7 +18,7 @@ export const Button = ({
 }) => {
   return (
     <button
-      className={`cursor-pointer border p-2 rounded-full min-w-[100px] font-bold shadowed ${styles[style]} ${className}`}
+      className={`cursor-pointer border p-2 rounded-full min-w-[100px] max-w-max font-bold shadowed ${styles[style]} ${className}`}
       onClick={onClick}
     >
       {children}

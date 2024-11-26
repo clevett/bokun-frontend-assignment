@@ -21,16 +21,14 @@ export default async function ExperienceEdit({
   const updateExperience = editExperience.bind(null, experience);
 
   return (
-    <div>
+    <>
       {experience && (
-        <div className="grid gap-6 auto-rows-min">
-          <Form
-            cancelHref={`/experiences/${experienceId}`}
-            experience={experience}
-            onSubmitAction={updateExperience}
-          />
-        </div>
+        <Form
+          cancelHref={`/experiences/${experienceId}`}
+          experience={experience}
+          onSubmitAction={updateExperience}
+        />
       )}
-    </div>
+    </>
   );
 }

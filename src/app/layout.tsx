@@ -17,7 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`antialiased`}>
-        <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 bg-primary">
+        <div className="grid items-center justify-items-center min-h-screen gap-6 py-2 lg:py-6 lg:px-4 bg-primary">
           <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
             {children}
           </main>

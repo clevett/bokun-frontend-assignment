@@ -4,7 +4,7 @@ Minimum styling was done per the directions but Tailwind was used and few custom
 
 ## Setup
 
-1. Create a .env file in the root then add key `NEXT_PUBLIC_API = "{demoAddress}/{assignedId}"`
+1. Create a .env file in the root then add key `API = "{demoAddress}/{assignedId}"`
 2. `npm install` in the root folder
 3. Run in terminal `npm run dev`
 
@@ -53,6 +53,4 @@ Should show a form that allows you to create a new experience.
 
 Should show a form that allows you to update an experience.
 
-
 ![TourSite](https://github.com/user-attachments/assets/21debdcf-368a-4885-86d1-ccbb257f0916)
-

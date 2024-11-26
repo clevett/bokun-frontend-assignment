@@ -6,17 +6,19 @@ const styles = {
 
 // Created this button to demonstrate building a component library. Ideally it would be styled using a Design System as source of truth. In a production setting, I would have created inputs, textareas, and form elements as well.
 export const Button = ({
-  text,
-  style = "solid",
+  className,
   onClick,
+  style = "solid",
+  text,
 }: {
-  text: string;
-  style?: keyof typeof styles;
+  className?: string;
   onClick: () => void;
+  style?: keyof typeof styles;
+  text: string;
 }) => {
   return (
     <button
-      className={`cursor-pointer border p-2 rounded-full min-w-[100px] font-bold shadowed ${styles[style]}`}
+      className={`cursor-pointer border p-2 rounded-full min-w-[100px] font-bold shadowed ${styles[style]} ${className}`}
       onClick={onClick}
     >
       {text}

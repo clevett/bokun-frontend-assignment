@@ -11,3 +11,44 @@ Minimum styling was done per the directions but Tailwind was used and few custom
 ## Notes
 
 Comments and notes have been added to reflect decisions made for the technical eval versus a user facing project.
+
+# Bókun frontend assignment
+
+Imagine you are setting up a code project for a brand new, super simple Tripadvisor/Bókun experiences site.
+
+# Notes
+
+- The frontend should be written in **React**.
+- Feel free to choose any React framework or starting point.
+- You don't have to make things look pretty, but we do encourage you to set up some style system/framework.
+- After the project has been finished, you should **share the GitHub repository** with the `bokundev` user on GitHub.
+
+---
+
+# Requirements
+
+The app should have the following pages.
+
+## Experiences page
+
+**URL**: `/` or `/experiences`
+
+Should show a list/grid of all experiences added.
+
+## Experience details page
+
+**URL**: `/experiences/:experience_id`
+
+Should show details about the experience.
+
+## Create experience page\*\*
+
+**URL**: `/experiences/new`
+
+Should show a form that allows you to create a new experience.
+
+## **Experience edit page**
+
+**URL**: `/experiences/:experience_id/edit`
+
+Should show a form that allows you to update an experience.

@@ -57,6 +57,7 @@ export default function Experience() {
             <div className="grid gap-2 grid-flow-col grid-cols-[auto_min-content]">
               <h1 className="text-5xl capitalize">{experience.title}</h1>
               <Button
+                className="max-w-64 justify-self-end"
                 onClick={() => onEditClick(experience.id)}
                 style="outline"
                 text="(edit)"

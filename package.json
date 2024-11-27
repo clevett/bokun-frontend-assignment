@@ -2,11 +2,17 @@
   "name": "bokun-frontend-assignment",
   "version": "0.1.0",
   "private": true,
+  "lib": [
+    "ES2023"
+  ],
+  "module": "node16",
+  "target": "ES2022",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test": "jest"
   },
   "dependencies": {
     "next": "15.0.3",

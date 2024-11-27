@@ -59,7 +59,7 @@ Should show a form that allows you to update an experience.
 
 ## Review Feedback
 
-I had the initial project reviewed by my development coach. This was the feedback they provided and was implemented.
+I had the initial project reviewed by my development coach. This was the feedback we discussed for an improved implementation.
 
 ### Package
 
@@ -94,7 +94,7 @@ I had the initial project reviewed by my development coach. This was the feedbac
 
 ### Tests!
 
-- Do snapshot testing with [Jest](https://nextjs.org/docs/app/building-your-application/testing/jest)
+- Do snapshot testing with [Jest](https://nextjs.org/docs/app/building-your-application/testing/jest). This was not done as the NextJS app installed with the React 19 beta and Jest had dependency for React 18.
 
 ### Conclusion
 

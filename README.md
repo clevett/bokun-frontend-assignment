@@ -55,7 +55,7 @@ Should show a form that allows you to create a new experience.
 
 Should show a form that allows you to update an experience.
 
-![TourSite](https://github.com/user-attachments/assets/21debdcf-368a-4885-86d1-ccbb257f0916)
+![TourSite](https://github.com/user-attachments/assets/66eb7054-ec73-4967-85a2-f764fc40b58f)
 
 ## Review Feedback
 
